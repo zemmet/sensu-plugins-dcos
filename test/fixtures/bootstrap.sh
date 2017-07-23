@@ -116,3 +116,9 @@ $RUBY_HOME/bin/gem install sensu-plugins-dcos-*.gem
 
 echo $RUBY_HOME
 ls $RUBY_HOME/bin
+
+if [[ -d '/home/travis/.rvm/rubies' ]]; then
+  ls /home/travis/.rvm/rubies
+else
+  echo '/home/travis/.rvm/rubies does not exist, you are probably running locally'
+fi

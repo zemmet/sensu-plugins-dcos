@@ -2,13 +2,13 @@
 driver:
   name: docker
   use_sudo: false
+  volumes:
+    - /home/travis/.rvm/rubies
 
 provisioner:
   name: shell
   data_path: .
   script: test/fixtures/bootstrap.sh
-  volume:
-    - /home/travis/.rvm/rubies
 
 verifier:
   ruby_bindir: <%= ENV['MY_RUBY_HOME'] || '/opt/sensu/embedded' %>/bin
